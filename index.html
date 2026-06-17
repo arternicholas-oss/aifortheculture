@@ -151,6 +151,18 @@
   .app .ad{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.5}
   .app .at{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted2);margin-top:10px}
   .disclaimer{color:var(--muted2);font-size:12.5px;text-align:center;max-width:62ch;margin:40px auto 0;line-height:1.6}
+
+  .team{display:grid;gap:22px;max-width:940px;margin:0 auto}
+  .bio{display:grid;grid-template-columns:200px 1fr;gap:30px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px;align-items:start}
+  @media(max-width:680px){.bio{grid-template-columns:1fr;gap:18px}}
+  .bio-ph{aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#111}
+  .bio-ph img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .bio-body h3{font-size:24px;font-weight:800;margin:6px 0 12px}
+  .bio-body p{color:var(--muted);font-size:15px;line-height:1.65}
+  .bio-body p b{color:#fff;font-weight:600}
+  .bio-links{display:flex;flex-wrap:wrap;gap:18px;margin-top:16px}
+  .bio-links a{font-family:'Sora';font-weight:600;font-size:13px;color:#fff;border-bottom:1px solid var(--line2);padding-bottom:2px}
+  .bio-links a:hover{border-color:#fff}
 </style>
 </head>
 <body>
@@ -348,7 +360,37 @@
   </div>
 </section>
 
-<section class="blk news" id="about">
+<section class="blk" id="about">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">About</span>
+      <h2>Built by the culture, for the culture.</h2>
+      <p>AI For The Culture is a platform showcasing the work of AI creators — led by a team revitalizing soul, sound, and storytelling with modern AI tools.</p>
+    </div>
+    <div class="team">
+      <div class="bio">
+        <div class="bio-ph"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2vCicldrYg7FPpNGM0F5ung3kAN/hf_20260617_220105_1d414448-2fca-4d49-9bdf-a0401ff3d235.png" alt="Nicholas Arter" /></div>
+        <div class="bio-body">
+          <span class="eyebrow">CEO / Founder</span>
+          <h3>Nicholas Arter</h3>
+          <p>Nick Arter — a.k.a. "Nick Hustles" — founded AI For The Culture in 2023 with a clear mission: build a platform to display his own creativity and the creativity of others, brought to light with AI tools. As an AI creator, Nick is responsible for revitalizing 1970s soul music with a modern flare. His work has generated over <b>60 million streams</b> across streaming platforms, and he has been featured in <b>The New Yorker</b>, <b>Billboard</b>, and <b>Wired</b>.</p>
+          <div class="bio-links"><a href="mailto:Nick@aifortheculture.com">Nick@aifortheculture.com</a><a href="https://NickHustles.com" target="_blank" rel="noopener">NickHustles.com</a></div>
+        </div>
+      </div>
+      <div class="bio">
+        <div class="bio-ph"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2vCicldrYg7FPpNGM0F5ung3kAN/hf_20260617_220106_97d8ad94-32e2-4c3a-ab41-733b66b9eeeb.png" alt="John Elby" /></div>
+        <div class="bio-body">
+          <span class="eyebrow">Senior Vice President, Managing Partner</span>
+          <h3>John Elby</h3>
+          <p>John Elby — a.k.a. "Johnny Crenshaw" — is a serial entrepreneur with 10+ years of experience in the music industry. He is the founder of the AI music-production tool <b>VibeProducers.com</b> and the Claude/Anthropic tool <b>CoworkFix.com</b>. John provides artistic development, strategic vision, and brand management — brokering licensing deals, negotiating recording contracts, and building partnerships that establish the brand's offline presence.</p>
+          <div class="bio-links"><a href="mailto:Jay@aifortheculture.com">Jay@aifortheculture.com</a><a href="https://JohnnyCrenshaw.com" target="_blank" rel="noopener">JohnnyCrenshaw.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk news" id="newsletter">
   <div class="wrap">
     <div class="head" style="margin-bottom:0">
       <span class="eyebrow">Stay in the loop</span>
