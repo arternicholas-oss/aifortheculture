@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Animation Course — AI For The Culture</title>
+<meta name="description" content="Bring characters and worlds to life with AI animation — style, consistency, and storytelling for animated content." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#000; --panel:#0C0C0C; --panel2:#141414; --line:#242424; --line2:#363636;
+    --text:#FFFFFF; --muted:#9C9C9C; --muted2:#6B6B6B; --r:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.dsp{font-family:'Sora',sans-serif;letter-spacing:-.025em;line-height:1.04}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-family:'Sora';border-radius:999px;padding:13px 24px;font-size:14px;cursor:pointer;border:none;transition:.16s}
+  .btn-primary{background:#fff;color:#000}
+  .btn-primary:hover{background:#e2e2e2;transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--line2)}
+  .btn-ghost:hover{border-color:#fff}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .badge-live{background:#fff;color:#000}
+  .badge-soon{background:transparent;color:var(--muted);border:1px solid var(--line2)}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .anno{background:#fff;color:#000;text-align:center;font-size:13px;font-weight:600;padding:9px 16px;font-family:'Sora';letter-spacing:.01em}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:11px;font-family:'Sora';font-weight:800;font-size:16px;letter-spacing:.01em}
+  .logo .mark{width:34px;height:34px;border-radius:9px;background:#fff;color:#000;display:grid;place-items:center;font-size:16px;font-weight:800}
+  .navlinks{display:flex;gap:30px;font-size:14px;font-weight:500;color:var(--muted)}
+  .navlinks a:hover{color:#fff}
+  .navcta{display:flex;align-items:center;gap:16px}
+  .navcta .login{font-size:14px;font-weight:600}
+  @media(max-width:880px){.navlinks{display:none}.navcta .login{display:none}}
+
+  /* ---- course page ---- */
+  .chero{padding:70px 0 64px;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  @media(max-width:900px){.chero{grid-template-columns:1fr;gap:34px;padding:46px 0 40px}}
+  .chero .back{font-size:13px;color:var(--muted);font-weight:600;font-family:'Sora'}
+  .chero .back:hover{color:#fff}
+  .chero h1{font-size:clamp(36px,5.2vw,62px);font-weight:800;margin:16px 0 0}
+  .chero h1 em{font-style:italic;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px}
+  .chero .lead{color:var(--muted);font-size:clamp(16px,1.8vw,19px);margin-top:20px;max-width:52ch}
+  .chero .hbtns{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+  .metarow{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .pill{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line2);border-radius:999px;padding:8px 15px;font-size:13px;color:#d4d4d4;font-weight:500}
+  .pill b{font-family:'Sora';color:#fff;font-weight:700}
+  .heroart{position:relative;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#111;aspect-ratio:3/2}
+  .heroart img{width:100%;height:100%;object-fit:cover}
+  .heroart .tag{position:absolute;top:16px;left:16px}
+  .heroart::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5),transparent 55%)}
+
+  section.blk{padding:74px 0;border-top:1px solid var(--line)}
+  .head{max-width:720px;margin:0 auto 46px;text-align:center}
+  .head h2{font-size:clamp(28px,3.6vw,42px);font-weight:800;margin-top:12px}
+  .head p{color:var(--muted);margin-top:14px;font-size:16px}
+
+  .lgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:860px){.lgrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.lgrid{grid-template-columns:1fr}}
+  .lcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .lcard .ic{width:34px;height:34px;border-radius:9px;background:#fff;color:#000;display:grid;place-items:center;font-family:'Sora';font-weight:800;font-size:15px;margin-bottom:14px}
+  .lcard h4{font-family:'Sora';font-weight:700;font-size:16px;margin-bottom:7px}
+  .lcard p{color:var(--muted);font-size:14px}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:940px;margin:0 auto}
+  @media(max-width:760px){.twocol{grid-template-columns:1fr}}
+  .panelbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px}
+  .panelbox h4{font-family:'Sora';font-weight:700;font-size:18px;margin-bottom:16px}
+  .checklist{list-style:none;display:grid;gap:12px}
+  .checklist li{display:flex;gap:11px;font-size:14.5px;color:#dcdcdc;align-items:flex-start}
+  .checklist li .ck{color:#fff;font-weight:800}
+
+  .curric{max-width:860px;margin:0 auto;display:grid;gap:14px}
+  .mod{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .mod-h{display:flex;align-items:center;gap:16px;padding:20px 24px;cursor:pointer;user-select:none}
+  .mod-h .mn{font-family:'Sora';font-weight:800;font-size:13px;color:var(--muted2);min-width:64px}
+  .mod-h .mt{font-family:'Sora';font-weight:700;font-size:17px;flex:1}
+  .mod-h .mx{color:var(--muted);font-size:22px;transition:.2s}
+  .mod.open .mx{transform:rotate(45deg);color:#fff}
+  .mod-b{display:none;padding:0 24px 22px 104px}
+  .mod.open .mod-b{display:block}
+  .mod-b ul{list-style:none;display:grid;gap:9px}
+  .mod-b li{font-size:14px;color:var(--muted);display:flex;gap:9px}
+  .mod-b li::before{content:"–";color:var(--muted2)}
+  @media(max-width:560px){.mod-b{padding:0 24px 22px 24px}.mod-h .mn{min-width:auto}}
+
+  /* pricing */
+  .pricewrap{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;max-width:920px;margin:0 auto;align-items:stretch}
+  @media(max-width:760px){.pricewrap{grid-template-columns:1fr}}
+  .pcard{background:var(--panel);border:1px solid var(--line2);border-radius:20px;padding:38px}
+  .pcard.alt{background:#070707;border:1px solid var(--line)}
+  .pcard .ptag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .pcard .amt{font-family:'Sora';font-weight:800;font-size:54px;margin:10px 0 2px}
+  .pcard .amt span{font-size:17px;color:var(--muted);font-weight:500}
+  .pcard .split{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);color:#d8d8d8;font-weight:600;font-size:13px;padding:7px 14px;border-radius:999px;margin:6px 0 22px}
+  .pcard .pl{list-style:none;display:grid;gap:11px;margin:18px 0 26px}
+  .pcard .pl li{display:flex;gap:10px;font-size:14.5px;color:#dcdcdc}
+  .pcard .pl li .ck{color:#fff;font-weight:800}
+  .pcard .btn{width:100%;justify-content:center}
+  .pcard .fineprint{color:var(--muted2);font-size:12.5px;margin-top:14px;text-align:center}
+  .pcard.alt h3{font-family:'Sora';font-weight:800;font-size:26px;margin:8px 0 4px}
+
+  .faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+  .fitem{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+  .fitem h4{font-family:'Sora';font-weight:700;font-size:16px;margin-bottom:8px}
+  .fitem p{color:var(--muted);font-size:14.5px}
+
+  .bio{display:grid;grid-template-columns:180px 1fr;gap:28px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px;align-items:start;max-width:860px;margin:0 auto}
+  @media(max-width:680px){.bio{grid-template-columns:1fr;gap:18px}}
+  .bio-ph{aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#111}
+  .bio-ph img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .bio-body h3{font-size:24px;font-weight:800;margin:6px 0 12px}
+  .bio-body p{color:var(--muted);font-size:15px;line-height:1.65}
+  .bio-body p b{color:#fff;font-weight:600}
+
+  .finalcta{text-align:center;background:#070707}
+  .finalcta h2{font-size:clamp(30px,4vw,46px);font-weight:800}
+  .finalcta p{color:var(--muted);margin:14px auto 0;max-width:50ch;font-size:16px}
+  .finalcta .hbtns{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+
+  footer{padding:48px 0 32px;border-top:1px solid var(--line)}
+  .fcols{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  .fcol h5{font-family:'Sora';font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);margin-bottom:14px}
+  .fcol a{display:block;color:#c9c9c9;font-size:14px;margin-bottom:9px}
+  .fcol a:hover{color:#fff}
+  .socials{display:flex;gap:10px;margin-top:16px}
+  .socials a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line2);display:grid;place-items:center;color:#c9c9c9}
+  .socials a:hover{border-color:#fff;color:#fff}
+  .socials a svg{width:19px;height:19px}
+  .fbot{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted2);font-size:13px}
+</style>
+</head>
+<body>
+
+<div class="anno">AI Animation is coming — join the waitlist for early access &amp; launch pricing &nbsp;→</div>
+
+<header>
+  <nav class="wrap">
+    <a class="logo" href="index.html"><span class="mark">A</span> AI&nbsp;FOR&nbsp;THE&nbsp;CULTURE</a>
+    <div class="navlinks">
+      <a href="index.html#courses">Courses</a>
+      <a href="index.html#roster">Roster</a>
+      <a href="index.html#tools">AI Tools</a>
+      <a href="index.html#community">Community</a>
+      <a href="index.html#about">About</a>
+    </div>
+    <div class="navcta">
+      <a class="login" href="#">Log In</a>
+      <a class="btn btn-primary" href="#enroll">Join Waitlist</a>
+    </div>
+  </nav>
+</header>
+
+<section class="wrap">
+  <div class="chero">
+    <div>
+      <a class="back" href="index.html#courses">← All Courses</a>
+      <div style="margin-top:18px"><span class="badge badge-soon tag">Coming Soon</span></div>
+      <h1>AI <em>Animation</em> Course</h1>
+      <p class="lead">Bring characters and worlds to life with AI animation — style, consistency, and storytelling for animated content that looks like a studio made it.</p>
+      <div class="hbtns">
+        <a class="btn btn-primary" href="#enroll">Join the Waitlist</a>
+        <a class="btn btn-ghost" href="#curriculum">See the Curriculum</a>
+      </div>
+      <div class="metarow">
+        <span class="pill"><b>8</b> Modules</span>
+        <span class="pill"><b>36+</b> Lessons</span>
+        <span class="pill"><b>5+ hrs</b> Video</span>
+        <span class="pill"><b>All</b> Levels</span>
+        <span class="pill"><b>Lifetime</b> Access</span>
+      </div>
+    </div>
+    <div class="heroart">
+      <span class="badge badge-soon tag">Coming Soon</span>
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_2vCicldrYg7FPpNGM0F5ung3kAN/hf_20260617_204825_55329f0b-4e0d-44e4-8a26-63307b071ab4.png" alt="AI Animation Course" />
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">What You'll Learn</span>
+      <h2>From character to animated series.</h2>
+      <p>Everything it takes to develop a look, animate it, and ship animated stories that feel alive.</p>
+    </div>
+    <div class="lgrid">
+      <div class="lcard"><div class="ic">1</div><h4>Develop a Style</h4><p>Lock a distinct animated look you can reproduce again and again.</p></div>
+      <div class="lcard"><div class="ic">2</div><h4>Design Characters</h4><p>Build characters that stay consistent shot to shot.</p></div>
+      <div class="lcard"><div class="ic">3</div><h4>Animate Motion</h4><p>Keyframes, movement, and lifelike motion with AI.</p></div>
+      <div class="lcard"><div class="ic">4</div><h4>Tell Stories</h4><p>Scripts, scenes, and pacing built for animated content.</p></div>
+      <div class="lcard"><div class="ic">5</div><h4>Lip-Sync &amp; Dialogue</h4><p>Match voice to character believably.</p></div>
+      <div class="lcard"><div class="ic">6</div><h4>Assemble &amp; Ship</h4><p>Build full scenes and release an animated series.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Who This Is For</span>
+      <h2>Built for creators, not engineers.</h2>
+    </div>
+    <div class="twocol">
+      <div class="panelbox">
+        <h4>This is for you if…</h4>
+        <ul class="checklist">
+          <li><span class="ck">✓</span> You want to make animated content without a full studio.</li><li><span class="ck">✓</span> You have characters or worlds you want to bring to life.</li><li><span class="ck">✓</span> You've struggled to keep an AI character consistent.</li><li><span class="ck">✓</span> You want to ship a series, not just one clip.</li>
+        </ul>
+      </div>
+      <div class="panelbox">
+        <h4>You'll walk away with…</h4>
+        <ul class="checklist">
+          <li><span class="ck">✓</span> A finished animated scene you made end to end.</li><li><span class="ck">✓</span> A reusable character &amp; style system.</li><li><span class="ck">✓</span> A storytelling &amp; scripting workflow.</li><li><span class="ck">✓</span> A pipeline to assemble and release a series.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="curriculum">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The Curriculum</span>
+      <h2>8 modules. Start to finish.</h2>
+      <p>Tap any module to see what's inside.</p>
+    </div>
+    <div class="curric">
+      <div class="mod open"><div class="mod-h"><span class="mn">01</span><span class="mt">Foundations of AI Animation</span><span class="mx">+</span></div><div class="mod-b"><ul><li>The AI animation landscape</li><li>Tools &amp; workspace setup</li><li>The full pipeline overview</li><li>Thinking like an animator</li></ul></div></div>
+      <div class="mod"><div class="mod-h"><span class="mn">02</span><span class="mt">Style Development</span><span class="mx">+</span></div><div class="mod-b"><ul><li>Defining a distinct look</li><li>Reference &amp; mood</li><li>Reproducible style systems</li><li>Color &amp; design language</li></ul></div></div>
+      <div class="mod"><div class="mod-h"><span class="mn">03</span><span class="mt">Character Design &amp; Consistency</span><span class="mx">+</span></div><div class="mod-b"><ul><li>Designing characters</li><li>Keeping them consistent</li><li>Turnarounds &amp; references</li><li>Expressions &amp; poses</li></ul></div></div>
+      <div class="mod"><div class="mod-h"><span class="mn">04</span><span class="mt">Keyframes &amp; Motion</span><span class="mx">+</span></div><div class="mod-b"><ul><li>Keyframing basics</li><li>Believable movement</li><li>Timing &amp; weight</li><li>Fixing motion artifacts</li></ul></div></div>
+      <div class="mod"><div class="mod-h"><span class="mn">05</span><span class="mt">Storytelling &amp; Scripts</span><span class="mx">+</span></div><div class="mod-b"><ul><li>Story structure for animation</li><li>Scriptwriting with AI</li><li>Scenes &amp; beats</li><li>Pacing</li></ul></div></div>
+      <div class="mod"><div class="mod-h"><span class="mn">06</span><span class="mt">Lip-Sync &amp; Dialogue</span><span class="mx">+</span></div><div class="mod-b"><ul><li>Voice &amp; dialogue</li><li>Lip-sync techniques</li><li>Matching emotion</li><li>Cleaning up sync</li></ul></div></div>
+      <div class="mod"><div class="mod-h"><span class="mn">07</span><span class="mt">Scene Assembly &amp; Editing</span><span class="mx">+</span></div><div class="mod-b"><ul><li>Building scenes</li><li>Cutting &amp; sequencing</li><li>Backgrounds &amp; composition</li><li>Sound &amp; music</li></ul></div></div>
+      <div class="mod"><div class="mod-h"><span class="mn">08</span><span class="mt">Shipping an Animated Series</span><span class="mx">+</span></div><div class="mod-b"><ul><li>Episode workflow</li><li>Consistency at scale</li><li>Packaging &amp; thumbnails</li><li>Publishing &amp; distribution</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Your Instructor</span>
+      <h2>Taught by people who've done it.</h2>
+    </div>
+    <div class="bio">
+      <div class="bio-ph"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2vCicldrYg7FPpNGM0F5ung3kAN/hf_20260617_220105_1d414448-2fca-4d49-9bdf-a0401ff3d235.png" alt="Nick Hustles" /></div>
+      <div class="bio-body">
+        <span class="eyebrow">Nick Hustles · Founder, AI For The Culture</span>
+        <h3>Nick Hustles</h3>
+        <p>Nick Hustles is a songwriter, music producer, and the founder of AI For The Culture — a platform built to showcase AI creators. His AI-produced catalog has generated over <b>60 million streams</b>, and his work has been featured in <b>The New Yorker</b>, <b>Billboard</b>, and <b>Wired</b>. This course distills the exact process the AI For The Culture team uses to build animated characters and stories.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="enroll">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Enroll</span>
+      <h2>Get early access &amp; launch pricing.</h2>
+      <p>Join the waitlist to lock in founding-member pricing and be first in when the course opens. Pay in full, or split it into two.</p>
+    </div>
+    <div class="pricewrap">
+      <div class="pcard">
+        <div class="ptag">AI Animation Course · Lifetime Access</div>
+        <div class="amt">$500</div>
+        <div class="split">or 2 interest-free payments of $250</div>
+        <ul class="pl">
+          <li><span class="ck">✓</span> All 8 modules &amp; 36+ lessons</li>
+          <li><span class="ck">✓</span> Templates, presets &amp; tool settings</li>
+          <li><span class="ck">✓</span> Lifetime access &amp; all future updates</li>
+          <li><span class="ck">✓</span> Private community access</li>
+        </ul>
+        <a class="btn btn-primary" href="mailto:Nick@aifortheculture.com?subject=Waitlist%3A%20AI%20Animation%20Course&body=I'd%20like%20to%20join%20the%20waitlist%20for%20the%20AI%20Animation%20Course.">Join the Waitlist</a>
+        <div class="fineprint">Founding-member pricing · spots are limited</div>
+      </div>
+      <div class="pcard alt">
+        <div class="ptag">Or get everything</div>
+        <h3>Membership</h3>
+        <div class="amt">$49<span>/mo</span></div>
+        <div class="fineprint" style="text-align:left;margin:0 0 18px">Cancel anytime</div>
+        <ul class="pl">
+          <li><span class="ck">✓</span> Every course, including this one</li>
+          <li><span class="ck">✓</span> All future courses as they launch</li>
+          <li><span class="ck">✓</span> Private Discord &amp; live sessions</li>
+          <li><span class="ck">✓</span> Member discounts on AI tools</li>
+        </ul>
+        <a class="btn btn-ghost" href="index.html#community" style="width:100%;justify-content:center">View Membership</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, answered.</h2>
+    </div>
+    <div class="faq">
+      <div class="fitem"><h4>Do I need experience?</h4><p>No. The course is built for complete beginners as well as seasoned creators. If you can follow steps, you can finish a project.</p></div>
+      <div class="fitem"><h4>What does joining the waitlist mean?</h4><p>You reserve your spot now at founding-member pricing and get access the moment the course opens. We'll reach out with early-access and payment details.</p></div>
+      <div class="fitem"><h4>Course vs. membership?</h4><p>Buying gets you this course for life. The $49/mo membership unlocks every course — Music, Video, Animation, and Influencer — plus the community and member perks.</p></div>
+      <div class="fitem"><h4>Which tools will I need?</h4><p>We walk through everything. Plan for AI image and animation tools plus a basic editor; we cover exactly what to use and when, and most have free tiers to start.</p></div>
+      <div class="fitem"><h4>Is there a refund policy?</h4><p>Yes — if the course isn't for you, reach out within 14 days of launch access for a full refund.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk finalcta">
+  <div class="wrap">
+    <h2>Bring your world to life.</h2>
+    <p>Join the waitlist today and lock in founding-member pricing before the course opens.</p>
+    <div class="hbtns">
+      <a class="btn btn-primary" href="mailto:Nick@aifortheculture.com?subject=Waitlist%3A%20AI%20Animation%20Course&body=I'd%20like%20to%20join%20the%20waitlist%20for%20the%20AI%20Animation%20Course.">Join the Waitlist</a>
+      <a class="btn btn-ghost" href="index.html#courses">Back to Courses</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div class="fcol" style="max-width:280px">
+        <a class="logo" href="index.html" style="margin-bottom:14px"><span class="mark">A</span> AI&nbsp;FOR&nbsp;THE&nbsp;CULTURE</a>
+        <p style="color:var(--muted);font-size:14px">The home for AI creators — learn, build, and move the culture forward.</p>
+        <div class="socials">
+          <a href="https://www.youtube.com/@AIForTheCulture" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 3.9 12 3.9 12 3.9s-7.5 0-9.4.5A3 3 0 0 0 .5 6.5 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.5 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.5zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+          <a href="https://www.instagram.com/_aifortheculture/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol"><h5>Courses</h5><a href="course-music.html">AI Music</a><a href="course-video.html">AI Video</a><a href="course-animation.html">AI Animation</a><a href="course-influencer.html">AI Influencer</a></div>
+      <div class="fcol"><h5>Explore</h5><a href="index.html#tools">AI Tools</a><a href="index.html#community">Community</a><a href="index.html#community">Membership</a><a href="#">Log In</a></div>
+      <div class="fcol"><h5>Company</h5><a href="index.html#about">About</a><a href="mailto:Nick@aifortheculture.com">Contact</a><a href="#">Terms</a><a href="#">Privacy</a></div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 AI For The Culture. All rights reserved.</span>
+      <span>aifortheculture.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.mod-h').forEach(function(h){
+    h.addEventListener('click', function(){ h.parentElement.classList.toggle('open'); });
+  });
+</script>
+
+</body>
+</html>
