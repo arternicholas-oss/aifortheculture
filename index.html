@@ -124,6 +124,33 @@
   .modal input:focus{border-color:#fff}
   .modal .btn{width:100%;justify-content:center}
   .modal .mfoot{color:var(--muted2);font-size:12px;margin-top:14px}
+
+  .roster{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media(max-width:760px){.roster{grid-template-columns:1fr}}
+  .artist{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.2s}
+  .artist:hover{border-color:var(--line2);transform:translateY(-3px)}
+  .artist .ph{position:relative;aspect-ratio:3/2;overflow:hidden}
+  .artist .ph img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .artist .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 55%)}
+  .artist .meta{padding:20px 24px 24px}
+  .artist h3{font-size:21px;font-weight:700}
+  .artist .role{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .artist .lnk{font-family:'Sora';font-weight:600;font-size:13px;color:#fff;margin-top:14px;display:inline-block}
+  .group-label{font-family:'Sora';font-weight:800;font-size:24px;margin:0 0 4px}
+  .group-sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+  .cat{font-family:'Sora';font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:36px 0 16px}
+  .apps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:860px){.apps{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.apps{grid-template-columns:1fr}}
+  .app{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.18s}
+  .app:hover{border-color:var(--line2);transform:translateY(-2px)}
+  .app .imgph{aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#0d0d0d,#0d0d0d 11px,#131313 11px,#131313 22px);display:grid;place-items:center;border-bottom:1px solid var(--line)}
+  .app .imgph span{font-family:'Sora';font-weight:800;font-size:24px;color:#3c3c3c;letter-spacing:.02em}
+  .app .ab{padding:15px 17px 17px}
+  .app .an{font-family:'Sora';font-weight:700;font-size:15px}
+  .app .ad{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.5}
+  .app .at{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted2);margin-top:10px}
+  .disclaimer{color:var(--muted2);font-size:12.5px;text-align:center;max-width:62ch;margin:40px auto 0;line-height:1.6}
 </style>
 </head>
 <body>
@@ -136,6 +163,8 @@
     <a class="logo" href="#"><span class="mark">A</span> AI&nbsp;FOR&nbsp;THE&nbsp;CULTURE</a>
     <div class="navlinks">
       <a href="#courses">Courses</a>
+      <a href="#roster">Roster</a>
+      <a href="#tools">AI Tools</a>
       <a href="#community">Community</a>
       <a href="#about">About</a>
     </div>
@@ -214,6 +243,82 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="blk" id="roster">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The Roster</span>
+      <h2>The artists moving the culture.</h2>
+      <p>Our growing lineup of AI creators — starting with music, expanding into film, short stories, and microdramas.</p>
+    </div>
+    <div class="roster">
+      <div class="artist">
+        <div class="ph"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2vCicldrYg7FPpNGM0F5ung3kAN/hf_20260617_220105_1d414448-2fca-4d49-9bdf-a0401ff3d235.png" alt="Nick Hustles" /></div>
+        <div class="meta"><h3>Nick Hustles</h3><div class="role">AI Music Artist</div><a class="lnk" href="https://www.youtube.com/@AIForTheCulture" target="_blank" rel="noopener">Listen →</a></div>
+      </div>
+      <div class="artist">
+        <div class="ph"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_2vCicldrYg7FPpNGM0F5ung3kAN/hf_20260617_220106_97d8ad94-32e2-4c3a-ab41-733b66b9eeeb.png" alt="Johnny Crenshaw" /></div>
+        <div class="meta"><h3>Johnny Crenshaw</h3><div class="role">AI Music Artist</div><a class="lnk" href="https://www.youtube.com/@AIForTheCulture" target="_blank" rel="noopener">Listen →</a></div>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:14px;margin-top:30px">Backed by a 190K-subscriber YouTube audience — and growing with new AI Films, Short Stories &amp; Microdramas.</p>
+  </div>
+</section>
+
+<section class="blk" id="tools" style="background:#070707;border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The App Ecosystem</span>
+      <h2>AI tools, built for the culture.</h2>
+      <p>22 apps · one ecosystem · Powered by AI For The Culture. Best-in-class models with a culturally-built layer.</p>
+    </div>
+
+    <div class="group-label">The Creative AI Suite</div>
+    <div class="group-sub">Best-in-class models · culturally built layer</div>
+    <div class="apps">
+        <div class="app"><div class="imgph"><span>V</span></div><div class="ab"><div class="an">Vivid</div><div class="ad">Image generation with accurate skin tones, hair, fashion & Afrofuturist styles base models get wrong.</div><div class="at">Runs on Nano Banana · Flux · Ideogram</div></div></div>
+        <div class="app"><div class="imgph"><span>M</span></div><div class="ab"><div class="an">Motion</div><div class="ad">Music videos, shorts & scenes with representation built into the defaults.</div><div class="at">Runs on Runway · Veo · Kling</div></div></div>
+        <div class="app"><div class="imgph"><span>VP</span></div><div class="ab"><div class="an">VibeProducers</div><div class="ad">Hip-hop, R&B, soul, gospel & Afrobeats — genre-native, producer-ready.</div><div class="at">Runs on Suno · Udio</div></div></div>
+        <div class="app"><div class="imgph"><span>E</span></div><div class="ab"><div class="an">Echo</div><div class="ad">Voice & cloning with AAVE, regional accents & a genuinely diverse voice library.</div><div class="at">Runs on ElevenLabs</div></div></div>
+        <div class="app"><div class="imgph"><span>P</span></div><div class="ab"><div class="an">Persona</div><div class="ad">Diverse talking-head AI avatars with dialect-aware lip-sync.</div><div class="at">Runs on HeyGen · OmniHuman</div></div></div>
+        <div class="app"><div class="imgph"><span>G</span></div><div class="ab"><div class="an">Griot</div><div class="ad">Scripts, captions & copy in a voice that sounds like us.</div><div class="at">Runs on Claude · GPT</div></div></div>
+        <div class="app"><div class="imgph"><span>GU</span></div><div class="ab"><div class="an">Glow-Up</div><div class="ad">Pro headshots & portraits that flatter Black features and lighting.</div><div class="at">Fine-tuned image models</div></div></div>
+        <div class="app"><div class="imgph"><span>BK</span></div><div class="ab"><div class="an">Brand Kit</div><div class="ad">Design templates, fonts & palettes rooted in the culture.</div><div class="at">Image gen + templates</div></div></div>
+        <div class="app"><div class="imgph"><span>W</span></div><div class="ab"><div class="an">Worldwide</div><div class="ad">Dialect-aware dubbing, translation & captioning.</div><div class="at">Voice + video APIs</div></div></div>
+        <div class="app"><div class="imgph"><span>MB</span></div><div class="ab"><div class="an">Mobile App Builder</div><div class="ad">Ship a creator app from your phone — every app is Powered by AI For The Culture.</div><div class="at">No-code wrapper</div></div></div>
+    </div>
+
+    <div class="group-label" style="margin-top:50px">Everyday Life Apps</div>
+    <div class="group-sub">Mostly LLM-powered · fast to ship</div>
+
+    <div class="cat">Career &amp; Money</div>
+    <div class="apps">
+        <div class="app"><div class="imgph"><span>CU</span></div><div class="ab"><div class="an">The Come Up</div><div class="ad">Resumes, cover letters & interview prep — without losing your voice.</div></div></div>
+        <div class="app"><div class="imgph"><span>BP</span></div><div class="ab"><div class="an">The Blueprint</div><div class="ad">Business plans, decks & a Black-founder grant + funding finder.</div></div></div>
+        <div class="app"><div class="imgph"><span>GN</span></div><div class="ab"><div class="an">Generational</div><div class="ad">Budgeting, credit & first-gen wealth in plain language.</div></div></div>
+    </div>
+    <div class="cat">Health &amp; Wellness</div>
+    <div class="apps">
+        <div class="app"><div class="imgph"><span>TP</span></div><div class="ab"><div class="an">The Plate</div><div class="ad">Healthier soul, Caribbean & African meal plans.</div></div></div>
+        <div class="app"><div class="imgph"><span>MR</span></div><div class="ab"><div class="an">Mind Right</div><div class="ad">Wellness journaling + a culturally-competent therapist finder.</div></div></div>
+        <div class="app"><div class="imgph"><span>CR</span></div><div class="ab"><div class="an">Crown</div><div class="ad">Hair & skincare for Black textures and melanated skin.</div></div></div>
+    </div>
+    <div class="cat">Education &amp; Family</div>
+    <div class="apps">
+        <div class="app"><div class="imgph"><span>ET</span></div><div class="ab"><div class="an">Each One Teach One</div><div class="ad">Culturally-affirming homework help & tutoring.</div></div></div>
+        <div class="app"><div class="imgph"><span>LG</span></div><div class="ab"><div class="an">Legacy</div><div class="ad">Scholarship, HBCU & college finder.</div></div></div>
+        <div class="app"><div class="imgph"><span>ST</span></div><div class="ab"><div class="an">Storytime</div><div class="ad">Kids' stories with Black heroes & history, built in.</div></div></div>
+    </div>
+    <div class="cat">Civic &amp; Community</div>
+    <div class="apps">
+        <div class="app"><div class="imgph"><span>GB</span></div><div class="ab"><div class="an">The Green Book</div><div class="ad">Black-owned travel & local business guide.</div></div></div>
+        <div class="app"><div class="imgph"><span>KR</span></div><div class="ab"><div class="an">Know Your Rights</div><div class="ad">Plain-language legal & rights guidance.</div></div></div>
+        <div class="app"><div class="imgph"><span>TW</span></div><div class="ab"><div class="an">The Word</div><div class="ad">Optional faith & devotional companion.</div></div></div>
+    </div>
+
+    <p class="disclaimer">Health, legal &amp; finance apps are built as guidance + referral, not professional advice — with disclaimers and a pro-in-the-loop where needed.</p>
   </div>
 </section>
 
