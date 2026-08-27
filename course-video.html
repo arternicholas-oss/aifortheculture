@@ -152,6 +152,37 @@
   .socials a svg{width:19px;height:19px}
   .fbot{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted2);font-size:13px}
 </style>
+
+<style>
+  .money{background:#080808;border-block:1px solid var(--line)}
+  .money .fig{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:34px 0 8px}
+  .money .f{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px}
+  .money .f .n{font-family:'Sora',sans-serif;font-size:31px;font-weight:800;line-height:1;
+    letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .money .f .l{color:var(--muted);font-size:13px;margin-top:9px;line-height:1.45}
+  .money .rows{margin-top:30px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .money .r{display:grid;grid-template-columns:210px 1fr;gap:20px;padding:17px 22px;
+    border-bottom:1px solid var(--line)}
+  .money .r:last-child{border-bottom:0}
+  .money .r b{font-size:14.5px;font-weight:600}
+  .money .r span{color:var(--muted);font-size:14.5px;line-height:1.55}
+  .money .note{margin-top:26px;color:var(--muted2);font-size:12.5px;line-height:1.6;max-width:78ch;
+    border-left:2px solid var(--line2);padding-left:16px}
+  @media(max-width:620px){.money .r{grid-template-columns:1fr;gap:5px}}
+</style>
+
+<style>
+  .reel{background:#050505;border-block:1px solid var(--line);padding:0}
+  .reel .frame{position:relative;max-width:1180px;margin:0 auto;aspect-ratio:16/9;overflow:hidden;
+    background:#000;border-inline:1px solid var(--line)}
+  .reel video{width:100%;height:100%;object-fit:cover;display:block}
+  .reel .cap{position:absolute;left:0;right:0;bottom:0;padding:52px 30px 22px;
+    background:linear-gradient(transparent,rgba(0,0,0,.85));display:flex;align-items:flex-end;
+    gap:14px;flex-wrap:wrap}
+  .reel .cap .tag{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:#0B0B0B;background:#fff;padding:5px 11px;border-radius:999px;flex:none}
+  .reel .cap p{color:#D6D2CB;font-size:14px;margin:0;line-height:1.5}
+</style>
 </head>
 <body>
 
@@ -200,6 +231,14 @@
   </div>
 </section>
 
+<section class="blk reel">
+  <div class="frame">
+    <video src="assets/video/course-video.mp4" poster="assets/video/course-video-poster.jpg"
+           autoplay muted loop playsinline preload="metadata"></video>
+    <div class="cap"><span class="tag">Made with the course</span><p>Shot from the six-block prompt taught in Module 3, then animated. No camera, no crew, no location.</p></div>
+  </div>
+</section>
+
 <section class="blk">
   <div class="wrap">
     <div class="head">
@@ -238,6 +277,23 @@
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="blk money">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The Money</span>
+      <h2>What this replaces, and what it opens.</h2>
+      <p>We are not going to invent an income figure for you. Here is the honest economics of being able to make cinematic video yourself.</p>
+    </div>
+    <div class="rows">
+      <div class="r"><b>The commission you stop paying</b><span>A music video is the single biggest line item most independent artists face, and it is the thing they skip. Making your own removes that decision from your release schedule entirely — you shoot the video because you can, not because you saved up.</span></div>
+      <div class="r"><b>Every release gets visuals</b><span>Tracks with video get placed on more playlists, pushed harder by platform algorithms, and cut into short-form. The visual is not decoration; it is distribution.</span></div>
+      <div class="r"><b>You can sell the service</b><span>Artists in your circle need videos and cannot afford a crew either. A repeatable prompt-to-publish pipeline is a service business the day you can run it twice.</span></div>
+      <div class="r"><b>Short-form is the ad channel</b><span>The same pipeline produces the vertical cuts that brands pay for. Module 8 covers shorts and reels specifically, because that is where the paid work concentrates right now.</span></div>
+    </div>
+    <p class="note">This course teaches a production capability, not an income stream. We make no earnings claim and no guarantee. What you do with the capability is the variable, and it is the one we cannot teach.</p>
   </div>
 </section>
 

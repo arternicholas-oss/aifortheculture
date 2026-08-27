@@ -152,6 +152,37 @@
   .socials a svg{width:19px;height:19px}
   .fbot{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted2);font-size:13px}
 </style>
+
+<style>
+  .money{background:#080808;border-block:1px solid var(--line)}
+  .money .fig{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:34px 0 8px}
+  .money .f{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px}
+  .money .f .n{font-family:'Sora',sans-serif;font-size:31px;font-weight:800;line-height:1;
+    letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .money .f .l{color:var(--muted);font-size:13px;margin-top:9px;line-height:1.45}
+  .money .rows{margin-top:30px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .money .r{display:grid;grid-template-columns:210px 1fr;gap:20px;padding:17px 22px;
+    border-bottom:1px solid var(--line)}
+  .money .r:last-child{border-bottom:0}
+  .money .r b{font-size:14.5px;font-weight:600}
+  .money .r span{color:var(--muted);font-size:14.5px;line-height:1.55}
+  .money .note{margin-top:26px;color:var(--muted2);font-size:12.5px;line-height:1.6;max-width:78ch;
+    border-left:2px solid var(--line2);padding-left:16px}
+  @media(max-width:620px){.money .r{grid-template-columns:1fr;gap:5px}}
+</style>
+
+<style>
+  .reel{background:#050505;border-block:1px solid var(--line);padding:0}
+  .reel .frame{position:relative;max-width:1180px;margin:0 auto;aspect-ratio:16/9;overflow:hidden;
+    background:#000;border-inline:1px solid var(--line)}
+  .reel video{width:100%;height:100%;object-fit:cover;display:block}
+  .reel .cap{position:absolute;left:0;right:0;bottom:0;padding:52px 30px 22px;
+    background:linear-gradient(transparent,rgba(0,0,0,.85));display:flex;align-items:flex-end;
+    gap:14px;flex-wrap:wrap}
+  .reel .cap .tag{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:#0B0B0B;background:#fff;padding:5px 11px;border-radius:999px;flex:none}
+  .reel .cap p{color:#D6D2CB;font-size:14px;margin:0;line-height:1.5}
+</style>
 </head>
 <body>
 
@@ -200,6 +231,14 @@
   </div>
 </section>
 
+<section class="blk reel">
+  <div class="frame">
+    <video src="assets/video/course-influencer.mp4" poster="assets/video/course-influencer-poster.jpg"
+           autoplay muted loop playsinline preload="metadata"></video>
+    <div class="cap"><span class="tag">Made with the course</span><p>A persona built with the face and consistency system from Module 2. Same face, any setting.</p></div>
+  </div>
+</section>
+
 <section class="blk">
   <div class="wrap">
     <div class="head">
@@ -238,6 +277,23 @@
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="blk money">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The Money</span>
+      <h2>How persona accounts actually get paid.</h2>
+      <p>We will not quote you a rate card, because anyone who does is guessing. What we will do is teach you to build your own from real numbers.</p>
+    </div>
+    <div class="rows">
+      <div class="r"><b>Rates come from your numbers</b><span>Module 7 teaches a rate builder, not a rate. Median views divided by a thousand, multiplied by the researched CPM in your niche, then adjusted for usage rights, exclusivity and whitelisting. You will be able to price a deal the day you land one.</span></div>
+      <div class="r"><b>Usage rights are where the money hides</b><span>Most creators quote a post fee and hand over perpetual usage for free. The rights are frequently worth more than the post. Knowing what to charge separately is the difference between a fee and a business.</span></div>
+      <div class="r"><b>Disclosed accounts survive</b><span>Undisclosed AI personas get demonetized and removed. Disclosed ones keep earning. YouTube states plainly that disclosing does not limit reach or monetization — so the compliant path is also the durable one.</span></div>
+      <div class="r"><b>One persona, many revenue lines</b><span>Brand deals, affiliate, products, licensing. The persona is the asset; the deals are what you run through it. Module 8 covers running more than one.</span></div>
+    </div>
+    <p class="note">No earnings claim is made or implied. Brand deal rates vary enormously by niche, audience and territory, which is precisely why this course teaches you to research and build your own rather than handing you someone else's number.</p>
   </div>
 </section>
 
